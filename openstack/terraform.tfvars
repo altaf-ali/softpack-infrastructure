@@ -1,0 +1,5 @@
+prefix = "aa27-oval-numismatist"
+ssh_key = "~/.ssh/id_rsa.pub"
+openstack_project = "hgi-dev"
+builder_flavor = "m1.small"
+builder_image = "focal-server-20220131"
