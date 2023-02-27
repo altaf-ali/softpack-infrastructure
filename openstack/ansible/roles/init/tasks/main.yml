@@ -1,0 +1,14 @@
+- name: install and update apt packages
+  become: true
+  block:
+  - name: upgrade apt
+    apt:
+      upgrade: yes
+      update_cache: yes
+
+  - name: install packages
+    apt:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - zsh

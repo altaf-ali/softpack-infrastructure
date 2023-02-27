@@ -1,0 +1,10 @@
+- name: install and update apt packages
+  become: true
+  block:
+  - name: install packages
+    apt:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - nginx
+

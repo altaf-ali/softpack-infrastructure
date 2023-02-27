@@ -1,0 +1,6 @@
+- name: cleanup
+  become: true
+  block:
+  - name: autoremove unused apt packages
+    apt:
+      autoremove: yes

@@ -1,0 +1,13 @@
+---
+- hosts: all
+  roles:
+    - init
+
+- hosts: builder
+  roles:
+    - nginx
+
+- hosts: all
+  roles:
+    - cleanup
+
