@@ -1,0 +1,22 @@
+[
+    {
+        "method": "GET",
+        "object": "record:a",
+        "data": {
+            "name": "${build_controller_hostname}"
+        }
+    },
+    %{ for index, hostname in build_node_hostnames}
+    {
+        "method": "GET",
+        "object": "record:a",
+        "data": {
+            "name": "${hostname}"
+        }
+    }
+    %{ if index+1 < length(build_node_hostnames) }
+    ,
+    %{ endif }
+    %{ endfor }
+]
+
